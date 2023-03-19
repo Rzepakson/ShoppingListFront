@@ -1,4 +1,4 @@
-button {
+button, .btn {
     background-color: #0a0a23;
     color: #fff;
     border: none;
@@ -7,4 +7,6 @@ button {
     min-height: 30px;
     min-width: 120px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
