@@ -1,12 +1,15 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ListEntity, ProductListEntity} from "types";
 import {useParams} from "react-router-dom";
 import {formatDate} from "../../utils/formatDate";
+import {AddProduct} from "../AddProduct/AddProduct";
+import {NewProductContext} from "../../contexts/newProduct.context";
 
 export const ViewProductsList = () => {
     const [oneList, setOneList] = useState<ListEntity | null>(null);
     const [productsList, setProductsList] = useState<ProductListEntity[] | null>(null);
     const {listId} = useParams();
+    const {newProduct} = useContext(NewProductContext);
 
     useEffect(() => {
         (async () => {
@@ -23,9 +26,9 @@ export const ViewProductsList = () => {
             const res = await fetch(`http://localhost:3001/productList/${listId}`);
             const data: ProductListEntity[] = await res.json();
 
-            setProductsList(data)
+            setProductsList(data);
         })();
-    }, [listId]);
+    }, [newProduct, listId]);
 
     if (productsList === null || oneList === null) {
         return <h2>Trwa wczytywanie produktów...</h2>;
@@ -39,6 +42,7 @@ export const ViewProductsList = () => {
         <>
             <h2>{oneList.name} <span>Utworzono {formatDate(oneList.createdAt)}</span></h2>
             <ul>{viewProducts}</ul>
+            <AddProduct listId={oneList.id}/>
         </>
     )
 }

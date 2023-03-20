@@ -1,11 +1,14 @@
 import {ListEntity} from "types";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import {DeleteListBtn} from "../common/DeleteListBtn";
+import {DeleteListContext} from "../../contexts/deleteList.context";
 
 import './ViewLists.css';
 
 export const ViewLists = () => {
     const [list, setList] = useState<ListEntity[] | null>(null);
+    const {deleteList} = useContext(DeleteListContext);
 
     useEffect(() => {
 
@@ -14,7 +17,7 @@ export const ViewLists = () => {
             const data: ListEntity[] = await res.json();
             setList(data);
         })();
-    }, []);
+    }, [deleteList]);
 
     if (list === null) {
         return <h2>Trwa wczytywanie list...</h2>;
@@ -23,10 +26,12 @@ export const ViewLists = () => {
     const viewLists = list.map(oneList =>
         <li key={oneList.createdAt}>
             <Link className="lists" to={`http://localhost:3000/productList/${oneList.id}`}>{oneList.name}</Link>
+            <DeleteListBtn listId={oneList.id}/>
         </li>
     )
 
     return (
         <ul>{viewLists}</ul>
+
     )
 }
