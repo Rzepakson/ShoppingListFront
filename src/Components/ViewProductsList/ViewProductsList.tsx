@@ -4,12 +4,22 @@ import {useParams} from "react-router-dom";
 import {formatDate} from "../../utils/formatDate";
 import {AddProduct} from "../AddProduct/AddProduct";
 import {NewProductContext} from "../../contexts/newProduct.context";
+import {DeleteProductBtn} from "../common/DeleteProductBtn";
+import {DeleteProductContext} from "../../contexts/deleteProduct.context";
+
+import './ViewProductsList.css';
+
+type tplotOptions = {
+    [index: number]: boolean
+}
 
 export const ViewProductsList = () => {
     const [oneList, setOneList] = useState<ListEntity | null>(null);
     const [productsList, setProductsList] = useState<ProductListEntity[] | null>(null);
+    const [clicked, setClicked] = useState<tplotOptions>({});
     const {listId} = useParams();
     const {newProduct} = useContext(NewProductContext);
+    const {deleteProduct} = useContext(DeleteProductContext);
 
     useEffect(() => {
         (async () => {
@@ -28,14 +38,30 @@ export const ViewProductsList = () => {
 
             setProductsList(data);
         })();
-    }, [newProduct, listId]);
+    }, [newProduct, listId, deleteProduct]);
 
     if (productsList === null || oneList === null) {
         return <h2>Trwa wczytywanie produktów...</h2>;
     }
 
-    const viewProducts = productsList.map(oneProduct => <li key={oneProduct.id}>
-        <p><span>{oneProduct.name} </span><span>{oneProduct.count}szt.</span></p>
+    const handleClick = (index: number) => () => {
+        setClicked(state => ({
+            ...state,
+            [index]: !state[index]
+        }));
+    };
+
+    const viewProducts = productsList.map((oneProduct, index) => <li key={oneProduct.id}>
+        <p>
+            <span className="product-item" onClick={handleClick(index)}>
+                {clicked[index]
+                    ? '✅ '
+                    : '🔲 '
+                }
+                {oneProduct.name} {oneProduct.count} szt.
+            </span>
+            <DeleteProductBtn listId={listId} id={oneProduct.id}/>
+        </p>
     </li>)
 
     return (

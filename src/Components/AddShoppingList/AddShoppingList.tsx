@@ -1,5 +1,6 @@
 import React, {SyntheticEvent, useState} from "react";
 import {Btn} from "../common/Btn";
+import {Navigate} from "react-router-dom";
 
 import "./AddShoppingList.css"
 
@@ -45,7 +46,7 @@ export const AddShoppingList = () => {
     }
 
     if (id) {
-        return <h2>Twoja lista "{form.name}" została dodana {createdAt}!</h2>
+        return <Navigate replace to={`/productList/${id}`}/>
     }
 
     const updateForm = (key: string, value: any) => {

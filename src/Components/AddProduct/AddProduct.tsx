@@ -11,7 +11,7 @@ export const AddProduct = (props: listIdProps) => {
     const {setNewProduct} = useContext(NewProductContext);
     const [form, setForm] = useState({
         name: '',
-        count: 0,
+        count: '',
     });
 
     const saveProduct = async (e: SyntheticEvent) => {
@@ -76,6 +76,7 @@ export const AddProduct = (props: listIdProps) => {
                     <input
                         type="number"
                         name="count"
+                        min={1}
                         required
                         maxLength={2}
                         value={form.count}

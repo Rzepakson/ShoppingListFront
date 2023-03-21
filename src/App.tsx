@@ -8,21 +8,25 @@ import {ViewProductsList} from "./Components/ViewProductsList/ViewProductsList";
 import "./App.css";
 import {NewProductContext} from "./contexts/newProduct.context";
 import {DeleteListContext} from "./contexts/deleteList.context";
+import {DeleteProductContext} from "./contexts/deleteProduct.context";
 
 export const App = () => {
     const [newProduct, setNewProduct] = useState('');
     const [deleteList, setDeleteList] = useState('');
+    const [deleteProduct, setDeleteProduct] = useState('');
     return (
         <NewProductContext.Provider value={{newProduct, setNewProduct}}>
             <DeleteListContext.Provider value={{deleteList, setDeleteList}}>
-                <div className="wrapper">
-                    <Header/>
-                    <Routes>
-                        <Route path="/" element={<AddShoppingList/>}/>
-                        <Route path="/list" element={<ViewLists/>}/>
-                        <Route path="/productList/:listId" element={<ViewProductsList/>}/>
-                    </Routes>
-                </div>
+                <DeleteProductContext.Provider value={{deleteProduct, setDeleteProduct}}>
+                    <div className="wrapper">
+                        <Header/>
+                        <Routes>
+                            <Route path="/" element={<AddShoppingList/>}/>
+                            <Route path="/list" element={<ViewLists/>}/>
+                            <Route path="/productList/:listId" element={<ViewProductsList/>}/>
+                        </Routes>
+                    </div>
+                </DeleteProductContext.Provider>
             </DeleteListContext.Provider>
         </NewProductContext.Provider>
     );

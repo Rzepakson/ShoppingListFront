@@ -10,7 +10,7 @@ export const DeleteListBtn = (props: listIdProps) => {
 
     const {setDeleteList} = useContext(DeleteListContext);
 
-    const deleteProduct = async (e: SyntheticEvent) => {
+    const deleteList = async (e: SyntheticEvent) => {
         e.preventDefault();
 
         const listId = props.listId;
@@ -28,6 +28,6 @@ export const DeleteListBtn = (props: listIdProps) => {
     }
 
     return (
-        <button className={'delete-list-btn'} onClick={deleteProduct}>Usuń</button>
+        <button className={'delete-list-btn'} onClick={deleteList}>Usuń</button>
     )
 };

@@ -7,3 +7,8 @@ nav h1 {
     margin-right: auto;
 
 }
+
+.home-btn {
+    text-decoration: none;
+    color: black;
+}
