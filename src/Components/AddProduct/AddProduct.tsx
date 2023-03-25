@@ -12,7 +12,17 @@ export const AddProduct = (props: listIdProps) => {
     const [form, setForm] = useState({
         name: '',
         count: '',
+        unit: 'szt',
     });
+
+    const checkNumbersAfterComma = (num: number): number => {
+        const numStr = num.toString();
+        if (numStr.includes('.')) {
+            return numStr.split('.')[1].length;
+        } else {
+            return 0;
+        }
+    }
 
     const saveProduct = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -20,7 +30,7 @@ export const AddProduct = (props: listIdProps) => {
         setLoading(true);
 
         try {
-
+            const numbersAfterComma = checkNumbersAfterComma(Number(form.count));
             const listId = props.listId;
             const res = await fetch(`http://localhost:3001/productList/${listId}`, {
                 method: 'POST',
@@ -28,8 +38,11 @@ export const AddProduct = (props: listIdProps) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    ...form,
+                    name: form.name,
+                    count: Number(form.count),
+                    unit: form.unit,
                     listId,
+                    numbersAfterComma,
                 }),
             });
 
@@ -55,7 +68,7 @@ export const AddProduct = (props: listIdProps) => {
     }
 
     return (
-        <form className="add-product-form" onSubmit={saveProduct}>
+        <form className="add-product-form" onSubmit={saveProduct} noValidate>
             <h2>Dodawanie produktu</h2>
             <p>
                 <label>
@@ -76,12 +89,27 @@ export const AddProduct = (props: listIdProps) => {
                     <input
                         type="number"
                         name="count"
-                        min={1}
-                        required
-                        maxLength={2}
+                        min="0"
+                        max="99"
                         value={form.count}
-                        onChange={e => updateForm('count', Number(e.target.value))}
+                        onChange={e => updateForm('count', e.target.value)}
                     />
+                </label>
+            </p>
+            <p>
+                <label>
+                    Jednostka: <br/>
+                    <select
+                        name="unit"
+                        required
+                        onChange={e => updateForm('unit', e.target.value)}
+                        defaultValue={form.unit}
+                    >
+                        <option value="szt">szt</option>
+                        <option value="kg">kg</option>
+                        <option value="dkg">dkg</option>
+                        <option value="g">g</option>
+                    </select>
                 </label>
             </p>
             <Btn className="add-product-button" text="Dodaj"/>

@@ -1,3 +1,7 @@
-.product-item {
+.product-items {
     cursor: pointer;
+}
+
+.alert {
+    color: red;
 }

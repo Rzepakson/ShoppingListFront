@@ -10,3 +10,8 @@ button, .btn {
     text-decoration: none;
     text-align: center;
 }
+
+.disabled {
+    background-color: #8a8a8a;
+    cursor: default;
+}

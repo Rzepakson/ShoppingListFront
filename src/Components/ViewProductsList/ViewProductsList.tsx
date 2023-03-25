@@ -9,17 +9,28 @@ import {DeleteProductContext} from "../../contexts/deleteProduct.context";
 
 import './ViewProductsList.css';
 
-type tplotOptions = {
+
+type initState = {
     [index: number]: boolean
+}
+
+const getInitialState = () => {
+    const clicked = localStorage.getItem('clicked');
+    return clicked ? JSON.parse(clicked) : {};
 }
 
 export const ViewProductsList = () => {
     const [oneList, setOneList] = useState<ListEntity | null>(null);
     const [productsList, setProductsList] = useState<ProductListEntity[] | null>(null);
-    const [clicked, setClicked] = useState<tplotOptions>({});
+    const [clicked, setClicked] = useState<initState>(getInitialState);
+    const [isAlertShown, setIsAlertShown] = useState(false);
     const {listId} = useParams();
     const {newProduct} = useContext(NewProductContext);
     const {deleteProduct} = useContext(DeleteProductContext);
+
+    useEffect(() => {
+        localStorage.setItem('clicked', JSON.stringify(clicked));
+    }, [clicked]);
 
     useEffect(() => {
         (async () => {
@@ -51,16 +62,54 @@ export const ViewProductsList = () => {
         }));
     };
 
+    const checkZeroAtEnd = (count: number) => {
+        const stringCount = count.toFixed(2).toString();
+
+        if (stringCount.slice(-2) === '00') {
+            return Number(stringCount).toFixed();
+        } else if (stringCount.slice(-1) === '0') {
+            return Number(stringCount).toFixed(1);
+        } else {
+            return Number(stringCount).toFixed(2);
+        }
+    };
+
+    const clearLocalStorage = (): void => {
+        window.localStorage.clear();
+        setClicked({});
+    }
+
+    const showAlert = () => {
+        setIsAlertShown(true);
+        setTimeout(() => {
+            setIsAlertShown(false);
+        }, 2500)
+
+    };
+
     const viewProducts = productsList.map((oneProduct, index) => <li key={oneProduct.id}>
         <p>
-            <span className="product-item" onClick={handleClick(index)}>
+            <span className="product-items" onClick={handleClick(index)}>
                 {clicked[index]
                     ? '✅ '
                     : '🔲 '
                 }
-                {oneProduct.name} {oneProduct.count} szt.
+                {`${oneProduct.name} `}
+                {checkZeroAtEnd(oneProduct.count)}
+                {oneProduct.unit}
             </span>
-            <DeleteProductBtn listId={listId} id={oneProduct.id}/>
+            <span className="delete-btns">
+                {clicked[index]
+                    ? (<>
+                            <button className="disabled" onClick={showAlert}>Usuń</button>
+                            {isAlertShown && (
+                                <span className='alert'>Najpierw musisz odznaczyć produkt, aby móc go usunąć.</span>
+                            )}
+                        </>
+                    )
+                    : <DeleteProductBtn listId={listId} id={oneProduct.id}/>
+                }
+            </span>
         </p>
     </li>)
 
@@ -69,6 +118,7 @@ export const ViewProductsList = () => {
             <h2>{oneList.name} <span>Utworzono {formatDate(oneList.createdAt)}</span></h2>
             <ul>{viewProducts}</ul>
             <AddProduct listId={oneList.id}/>
+            <button onClick={clearLocalStorage}>Wyczyść zaznaczenia</button>
         </>
     )
 }
