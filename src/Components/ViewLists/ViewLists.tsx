@@ -5,6 +5,7 @@ import {DeleteListBtn} from "../common/DeleteListBtn";
 import {DeleteListContext} from "../../contexts/deleteList.context";
 
 import './ViewLists.css';
+import {apiUrl} from "../../config/api";
 
 export const ViewLists = () => {
     const [list, setList] = useState<ListEntity[] | null>(null);
@@ -13,7 +14,7 @@ export const ViewLists = () => {
     useEffect(() => {
 
         (async () => {
-            const res = await fetch('http://localhost:3001/list');
+            const res = await fetch(`${apiUrl}/api/list`);
             const data: ListEntity[] = await res.json();
             setList(data);
         })();
@@ -25,7 +26,7 @@ export const ViewLists = () => {
 
     const viewLists = list.map(oneList =>
         <li key={oneList.createdAt} className="item-line">
-            <Link className="lists" to={`http://localhost:3000/productList/${oneList.id}`}>{oneList.name}</Link>
+            <Link className="lists" to={`${apiUrl}/api/productList/${oneList.id}`}>{oneList.name}</Link>
             <DeleteListBtn className="btn" listId={oneList.id}/>
         </li>
     )

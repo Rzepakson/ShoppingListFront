@@ -1,5 +1,6 @@
 import {SyntheticEvent, useContext} from "react";
 import {DeleteProductContext} from "../../contexts/deleteProduct.context";
+import {apiUrl} from "../../config/api";
 
 interface listAndProductIdProps {
     listId: string | undefined;
@@ -15,7 +16,7 @@ export const DeleteProductBtn = (props: listAndProductIdProps) => {
 
         const listId = props.listId;
         const id = props.id;
-        const res = await fetch(`http://localhost:3001/productList/${listId}/${id}`, {
+        const res = await fetch(`${apiUrl}/api/productList/${listId}/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

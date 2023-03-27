@@ -1,5 +1,6 @@
 import {SyntheticEvent, useContext} from "react";
 import {DeleteListContext} from "../../contexts/deleteList.context";
+import {apiUrl} from "../../config/api";
 
 interface listIdProps {
     listId: string | undefined;
@@ -14,7 +15,7 @@ export const DeleteListBtn = (props: listIdProps) => {
         e.preventDefault();
 
         const listId = props.listId;
-        const res = await fetch(`http://localhost:3001/list/${listId}`, {
+        const res = await fetch(`${apiUrl}/api/list/${listId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

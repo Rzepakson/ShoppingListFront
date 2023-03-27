@@ -4,24 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52defc48-cea4-4db2-8939-b171eda07eb4" name="Changes" comment="Added some validation and unit choice. Added storing information about clicked item in local storage and alert. Bump version.">
+    <list default="true" id="52defc48-cea4-4db2-8939-b171eda07eb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AddProduct/AddProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddProduct/AddProduct.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Btn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Btn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Btn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/common/DeleteListBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/DeleteListBtn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/common/DeleteProductBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/DeleteProductBtn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/layout/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +33,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Programowanie/MegaK/ShoppingList/shopping-list-front",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Programowanie\\MegaK\\ShoppingList\\shopping-list-front\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programowanie/MegaK/Etap7_NodeJS_Advanced/MegaProjekt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Programowanie\\MegaK\\ShoppingList\\shopping-list-front\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Programowanie\MegaK\ShoppingList\shopping-list-front\public\pictures" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build:win" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:win" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -72,9 +73,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build:win" />
       </list>
     </recent_temporary>
   </component>
@@ -104,7 +117,8 @@
       <workItem from="1679741445289" duration="12058000" />
       <workItem from="1679768216194" duration="10021000" />
       <workItem from="1679815490094" duration="19330000" />
-      <workItem from="1679933463855" duration="6274000" />
+      <workItem from="1679933463855" duration="10434000" />
+      <workItem from="1679954182896" duration="392000" />
     </task>
     <task id="LOCAL-00002" summary="Added main components and basic CSS to them. Added util formatDate which transform date to DD-MM-YYYY format. Added connection to back-end types. Bump version.">
       <created>1679254737148</created>
@@ -134,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679741745541</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added styles to application, added not-found-view which handle unexpected endpoints. Added showing errors. Bump version. THIS IS FIRST VERSION OF APP, CODE NOT REFACTORED!">
+      <created>1679940243992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679940243992</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +167,8 @@
     <MESSAGE value="Added 2 contexts to application. Added new functionalities: deleting list and adding products to list. Bump version." />
     <MESSAGE value="Added one more context. Added new functionality - deleting products in list and checking products already given in shop basket. Small changes in forms and CSS styles. Bump version." />
     <MESSAGE value="Added some validation and unit choice. Added storing information about clicked item in local storage and alert. Bump version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some validation and unit choice. Added storing information about clicked item in local storage and alert. Bump version." />
+    <MESSAGE value="Added styles to application, added not-found-view which handle unexpected endpoints. Added showing errors. Bump version. THIS IS FIRST VERSION OF APP, CODE NOT REFACTORED!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added styles to application, added not-found-view which handle unexpected endpoints. Added showing errors. Bump version. THIS IS FIRST VERSION OF APP, CODE NOT REFACTORED!" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

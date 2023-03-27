@@ -8,6 +8,7 @@ import {DeleteProductBtn} from "../common/DeleteProductBtn";
 import {DeleteProductContext} from "../../contexts/deleteProduct.context";
 
 import './ViewProductsList.css';
+import {apiUrl} from "../../config/api";
 
 
 type initState = {
@@ -34,7 +35,7 @@ export const ViewProductsList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/list/${listId}`);
+            const res = await fetch(`${apiUrl}/api/list/${listId}`);
             const data: ListEntity = await res.json();
 
             setOneList(data);
@@ -44,7 +45,7 @@ export const ViewProductsList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/productList/${listId}`);
+            const res = await fetch(`${apiUrl}/api/productList/${listId}`);
             const data: ProductListEntity[] = await res.json();
 
             setProductsList(data);
