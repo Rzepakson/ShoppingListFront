@@ -3,7 +3,7 @@ import {DeleteListContext} from "../../contexts/deleteList.context";
 
 interface listIdProps {
     listId: string | undefined;
-
+    className: string;
 }
 
 export const DeleteListBtn = (props: listIdProps) => {
@@ -28,6 +28,6 @@ export const DeleteListBtn = (props: listIdProps) => {
     }
 
     return (
-        <button className={'delete-list-btn'} onClick={deleteList}>Usuń</button>
+        <button className={'delete-list-btn'} onClick={deleteList}><span className="text-in-btn">Usuń</span></button>
     )
 };

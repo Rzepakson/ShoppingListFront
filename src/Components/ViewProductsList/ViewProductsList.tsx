@@ -23,7 +23,7 @@ export const ViewProductsList = () => {
     const [oneList, setOneList] = useState<ListEntity | null>(null);
     const [productsList, setProductsList] = useState<ProductListEntity[] | null>(null);
     const [clicked, setClicked] = useState<initState>(getInitialState);
-    const [isAlertShown, setIsAlertShown] = useState(false);
+    const [isErrorShown, setIsErrorShown] = useState(false);
     const {listId} = useParams();
     const {newProduct} = useContext(NewProductContext);
     const {deleteProduct} = useContext(DeleteProductContext);
@@ -79,46 +79,56 @@ export const ViewProductsList = () => {
         setClicked({});
     }
 
-    const showAlert = () => {
-        setIsAlertShown(true);
+    const showError = () => {
+        setIsErrorShown(true);
         setTimeout(() => {
-            setIsAlertShown(false);
-        }, 2500)
+            setIsErrorShown(false);
+        }, 5000)
 
     };
 
-    const viewProducts = productsList.map((oneProduct, index) => <li key={oneProduct.id}>
-        <p>
-            <span className="product-items" onClick={handleClick(index)}>
-                {clicked[index]
-                    ? '✅ '
-                    : '🔲 '
-                }
-                {`${oneProduct.name} `}
-                {checkZeroAtEnd(oneProduct.count)}
-                {oneProduct.unit}
+    const viewProducts = productsList.map((oneProduct, index) => <li key={oneProduct.id} className="item-line">
+            <span onClick={handleClick(index)} className="product-item">
+                <span className="check-box">
+                    {clicked[index]
+                        ? '✅ '
+                        : '🔲 '
+                    }
+                </span>
+                <span className="product-name">{`${oneProduct.name} `}</span>
+                <span className="product-count">
+                    {checkZeroAtEnd(oneProduct.count)}
+                    {oneProduct.unit}
+                </span>
             </span>
-            <span className="delete-btns">
+            <span className="delete-btn">
                 {clicked[index]
                     ? (<>
-                            <button className="disabled" onClick={showAlert}>Usuń</button>
-                            {isAlertShown && (
-                                <span className='alert'>Najpierw musisz odznaczyć produkt, aby móc go usunąć.</span>
-                            )}
+                            <button className="disabled" onClick={showError}><span className="text-in-btn">Usuń</span>
+                            </button>
                         </>
                     )
                     : <DeleteProductBtn listId={listId} id={oneProduct.id}/>
                 }
             </span>
-        </p>
-    </li>)
+        </li>
+    )
+
+    const viewClearChecked = productsList.length !== 0
+        ? <button className="btn clear-checked" onClick={clearLocalStorage}><span className="text-in-btn">Wyczyść zaznaczenia</span>
+        </button>
+        : null
 
     return (
-        <>
-            <h2>{oneList.name} <span>Utworzono {formatDate(oneList.createdAt)}</span></h2>
-            <ul>{viewProducts}</ul>
+        <div className="background">
+            <span className="created-at">{formatDate(oneList.createdAt)}</span>
+            <h2 className="list-title">{oneList.name}</h2>
+            <ul className="items-list">{viewProducts}</ul>
+            {isErrorShown && (
+                <p className='error'>Najpierw musisz odznaczyć produkt, aby móc go usunąć.</p>
+            )}
+            <span>{viewClearChecked}</span>
             <AddProduct listId={oneList.id}/>
-            <button onClick={clearLocalStorage}>Wyczyść zaznaczenia</button>
-        </>
+        </div>
     )
 }

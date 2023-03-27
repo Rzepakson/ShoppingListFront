@@ -1,14 +1,15 @@
 import {Btn} from "../common/Btn";
-import {Link} from "react-router-dom";
 
 import './Header.css'
+import {Link} from "react-router-dom";
 
 
 export const Header = () => {
     return (
-        <nav>
-            <Btn className="viewLists" text="Moje listy" to="/list"></Btn>
-            <h1><Link className="home-btn" to={'/'}>Moje zakupy</Link></h1>
-        </nav>
+        <header>
+            <Link className="home" to="/">🏠</Link>
+            <h1 className="site-title">Zakupsy</h1>
+            <span className="my-lists-span"><Btn className="btn" text="Moje listy" to="/list"/></span>
+        </header>
     );
 };

@@ -10,4 +10,13 @@ ul {
     list-style: none;
 }
 
+.one-list {
+    font-size: 2vh;
+    margin-top: 2vh;
+}
+
+.lists {
+    margin-right: 1vh;
+}
+
 

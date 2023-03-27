@@ -30,6 +30,7 @@ export const DeleteProductBtn = (props: listAndProductIdProps) => {
     }
 
     return (
-        <button className={'delete-product-btn'} onClick={deleteProduct}>Usuń</button>
+        <button className='delete-product-btn' onClick={deleteProduct}><span className="text-in-btn">Usuń</span>
+        </button>
     )
 };

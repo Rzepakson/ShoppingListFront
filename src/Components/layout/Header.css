@@ -1,14 +1,45 @@
-nav {
+header {
     display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-nav h1 {
-    margin-left: auto;
-    margin-right: auto;
-
+header h1 {
+    letter-spacing: 0.3vh;
+    font-size: 4vh;
+    cursor: default;
 }
 
-.home-btn {
+.home {
     text-decoration: none;
-    color: black;
+    font-size: 3vh;
 }
+
+.home:hover {
+    transform: scale(1.05);
+}
+
+.home:active {
+    transform: scale(0.95);
+}
+
+.my-lists-span {
+    margin-top: 1.5vh;
+}
+
+.my-lists-span:hover {
+    transform: scale(1.02);
+}
+
+.my-lists-span:active {
+    transform: scale(0.95);
+}
+
+header .btn {
+    padding: 15px;
+}
+
+header .btn:hover {
+    transform: scale(1.5);
+}
+

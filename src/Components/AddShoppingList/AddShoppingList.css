@@ -1,21 +1,46 @@
 .add-list {
-    background-color: #bcec97;
-    height: 50vh;
-    width: 100%;
+    background-color: #FEFAE0;
+    margin-top: 3vh;
+    border: black solid 1px;
+    border-radius: 10px;
+    width: 85vw;
+    padding: 20px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
 }
 
 .add-list h1 {
-    margin-bottom: 20px;
+    font-size: 3.5vh;
+    margin-bottom: 1.5vh;
+    cursor: default;
 }
 
-.add-list span {
-    margin-right: 5px;
-    font-weight: bold;
+.add-list-form {
+    margin: 0 auto 2vh auto;
+    width: 50vw;
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #E9EDC9;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
 }
 
-.add-list input {
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: gray;
+.add-list-name {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.submit-add-list {
+    display: block;
+}
+
+.add-product-error {
+    color: red;
+}
+
+.add-list-form button {
+    margin-bottom: 1vh;
 }

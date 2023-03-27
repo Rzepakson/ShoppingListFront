@@ -9,6 +9,7 @@ import "./App.css";
 import {NewProductContext} from "./contexts/newProduct.context";
 import {DeleteListContext} from "./contexts/deleteList.context";
 import {DeleteProductContext} from "./contexts/deleteProduct.context";
+import {NotFoundView} from "./Components/NotFoundView/NotFoundView";
 
 export const App = () => {
     const [newProduct, setNewProduct] = useState('');
@@ -21,6 +22,7 @@ export const App = () => {
                     <div className="wrapper">
                         <Header/>
                         <Routes>
+                            <Route path="*" element={<NotFoundView/>}/>
                             <Route path="/" element={<AddShoppingList/>}/>
                             <Route path="/list" element={<ViewLists/>}/>
                             <Route path="/productList/:listId" element={<ViewProductsList/>}/>

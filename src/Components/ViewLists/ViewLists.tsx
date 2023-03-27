@@ -24,14 +24,15 @@ export const ViewLists = () => {
     }
 
     const viewLists = list.map(oneList =>
-        <li key={oneList.createdAt}>
+        <li key={oneList.createdAt} className="item-line">
             <Link className="lists" to={`http://localhost:3000/productList/${oneList.id}`}>{oneList.name}</Link>
-            <DeleteListBtn listId={oneList.id}/>
+            <DeleteListBtn className="btn" listId={oneList.id}/>
         </li>
     )
 
     return (
-        <ul>{viewLists}</ul>
-
+        <div className="background">
+            <ul className="one-list">{viewLists}</ul>
+        </div>
     )
 }
