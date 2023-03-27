@@ -1,0 +1,45 @@
+.add-product-form {
+    margin: 0 auto 2vh auto;
+    width: 60vw;
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #E9EDC9;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
+}
+
+.form-title {
+    font-size: 3.5vh;
+    margin-bottom: 1.5vh;
+    cursor: default;
+}
+
+input, select, .input-name {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.input-name {
+    font-size: 2vh;
+}
+
+input, select {
+    border-radius: 8px;
+    padding: 0.5vh;
+}
+
+.one-input {
+    margin-bottom: 0.5vh;
+}
+
+.add-product-form .add-product-error {
+    text-align: center;
+    color: red;
+}
+
+.add-product-form button {
+    margin-bottom: 1vh;
+}
+
+
+

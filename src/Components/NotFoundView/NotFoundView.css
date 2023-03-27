@@ -1,0 +1,14 @@
+.not-found-message {
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.home:hover {
+    background-color: rgba(212, 163, 115, 0.5);
+    transform: scale(1.02);
+}
+
+.home:active {
+    background-color: rgb(212, 163, 115);
+    transform: scale(0.95);
+}

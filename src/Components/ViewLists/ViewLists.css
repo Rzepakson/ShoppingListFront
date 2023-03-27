@@ -1,0 +1,22 @@
+.lists {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    width: fit-content;
+}
+
+ul {
+    list-style: none;
+}
+
+.one-list {
+    font-size: 2vh;
+    margin-top: 2vh;
+}
+
+.lists {
+    margin-right: 1vh;
+}
+
+
