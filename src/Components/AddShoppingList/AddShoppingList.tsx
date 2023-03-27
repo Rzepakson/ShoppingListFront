@@ -3,6 +3,7 @@ import {Btn} from "../common/Btn";
 import {Navigate} from "react-router-dom";
 
 import "./AddShoppingList.css"
+import {apiUrl} from "../../config/api";
 
 const initForm = {
     name: '',
@@ -20,7 +21,7 @@ export const AddShoppingList = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch('http://localhost:3001/list', {
+            const res = await fetch(`${apiUrl}/api/list`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

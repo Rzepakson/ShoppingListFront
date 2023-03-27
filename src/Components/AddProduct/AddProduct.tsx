@@ -3,6 +3,7 @@ import {Btn} from "../common/Btn";
 import {NewProductContext} from "../../contexts/newProduct.context"
 
 import './AddProduct.css';
+import {apiUrl} from "../../config/api";
 
 interface listIdProps {
     listId: string | undefined;
@@ -35,7 +36,7 @@ export const AddProduct = (props: listIdProps) => {
         try {
             const numbersAfterComma = checkNumbersAfterComma(Number(form.count));
             const listId = props.listId;
-            const res = await fetch(`http://localhost:3001/productList/${listId}`, {
+            const res = await fetch(`${apiUrl}/api/productList/${listId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
