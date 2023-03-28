@@ -8,7 +8,7 @@
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
 }
 
-.form-title {
+.section-title {
     font-size: 3.5vh;
     margin-bottom: 1.5vh;
     cursor: default;
@@ -32,12 +32,11 @@ input, select {
     margin-bottom: 0.5vh;
 }
 
-.add-product-form .add-product-error {
-    text-align: center;
+.error {
     color: red;
 }
 
-.add-product-form button {
+.add-product-btn {
     margin-bottom: 1vh;
 }
 

@@ -3,11 +3,7 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
-    width: fit-content;
-}
-
-ul {
-    list-style: none;
+    margin-right: 1vh;
 }
 
 .one-list {
@@ -15,8 +11,6 @@ ul {
     margin-top: 2vh;
 }
 
-.lists {
-    margin-right: 1vh;
+.create-new-list-btn:active {
+    transform: scale(1.2);
 }
-
-

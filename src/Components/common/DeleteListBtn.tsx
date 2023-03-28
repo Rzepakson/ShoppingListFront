@@ -15,7 +15,7 @@ export const DeleteListBtn = (props: listIdProps) => {
         e.preventDefault();
 
         const listId = props.listId;
-        const res = await fetch(`${apiUrl}/api/list/${listId}`, {
+        const res = await fetch(`${apiUrl}/list/${listId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,6 +29,6 @@ export const DeleteListBtn = (props: listIdProps) => {
     }
 
     return (
-        <button className={'delete-list-btn'} onClick={deleteList}><span className="text-in-btn">Usuń</span></button>
+        <button className="delete-list-btn" onClick={deleteList}><span className="text-in-btn">Usuń</span></button>
     )
 };

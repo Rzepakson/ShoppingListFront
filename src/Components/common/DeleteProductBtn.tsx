@@ -16,7 +16,7 @@ export const DeleteProductBtn = (props: listAndProductIdProps) => {
 
         const listId = props.listId;
         const id = props.id;
-        const res = await fetch(`${apiUrl}/api/productList/${listId}/${id}`, {
+        const res = await fetch(`${apiUrl}/productList/${listId}/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export const DeleteProductBtn = (props: listAndProductIdProps) => {
     }
 
     return (
-        <button className='delete-product-btn' onClick={deleteProduct}><span className="text-in-btn">Usuń</span>
+        <button className="delete-product-btn" onClick={deleteProduct}><span className="text-in-btn">Usuń</span>
         </button>
     )
 };

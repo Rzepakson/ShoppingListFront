@@ -1,9 +1,9 @@
 import React, {SyntheticEvent, useContext, useState} from "react";
 import {Btn} from "../common/Btn";
 import {NewProductContext} from "../../contexts/newProduct.context"
+import {apiUrl} from "../../config/api";
 
 import './AddProduct.css';
-import {apiUrl} from "../../config/api";
 
 interface listIdProps {
     listId: string | undefined;
@@ -36,7 +36,7 @@ export const AddProduct = (props: listIdProps) => {
         try {
             const numbersAfterComma = checkNumbersAfterComma(Number(form.count));
             const listId = props.listId;
-            const res = await fetch(`${apiUrl}/api/productList/${listId}`, {
+            const res = await fetch(`${apiUrl}/productList/${listId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,9 +52,9 @@ export const AddProduct = (props: listIdProps) => {
 
             const data = await res.json();
 
-            if (res.status >= 400) {
-                setError(data.message);
-            }
+            res.status >= 400
+                ? setError(data.message)
+                : setError(null)
 
             setNewProduct(data);
 
@@ -72,16 +72,12 @@ export const AddProduct = (props: listIdProps) => {
 
     const showError = () => {
         setIsErrorShown(true);
-        setTimeout(() => {
-            setIsErrorShown(false);
-            setError(null);
-        }, 5000)
     }
 
     return (
         <>
             <form className="add-product-form" onSubmit={saveProduct} noValidate>
-                <h2 className="form-title">Dodawanie produktu</h2>
+                <h2 className="section-title">Dodawanie produktu</h2>
                 <p className="one-input">
                     <label>
                         <span className="input-name">Nazwa:</span>
@@ -119,12 +115,13 @@ export const AddProduct = (props: listIdProps) => {
                             <option value="kg">kg</option>
                             <option value="dkg">dkg</option>
                             <option value="g">g</option>
+                            <option value="l">l</option>
                         </select>
                     </label>
                 </p>
                 <Btn className="add-product-btn" text="Dodaj" onClick={showError}/>
                 {isErrorShown && (
-                    <p className="add-product-error">{error}</p>
+                    <p className="error">{error}</p>
                 )}
             </form>
         </>
