@@ -6,10 +6,9 @@ import {AddProduct} from "../AddProduct/AddProduct";
 import {NewProductContext} from "../../contexts/newProduct.context";
 import {DeleteProductBtn} from "../common/DeleteProductBtn";
 import {DeleteProductContext} from "../../contexts/deleteProduct.context";
-
-import './ViewProductsList.css';
 import {apiUrl} from "../../config/api";
 
+import './ViewProductsList.css';
 
 type initState = {
     [index: number]: boolean
@@ -31,11 +30,12 @@ export const ViewProductsList = () => {
 
     useEffect(() => {
         localStorage.setItem('clicked', JSON.stringify(clicked));
+        setIsErrorShown(false);
     }, [clicked]);
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiUrl}/api/list/${listId}`);
+            const res = await fetch(`${apiUrl}/list/${listId}`);
             const data: ListEntity = await res.json();
 
             setOneList(data);
@@ -45,7 +45,7 @@ export const ViewProductsList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiUrl}/api/productList/${listId}`);
+            const res = await fetch(`${apiUrl}/productList/${listId}`);
             const data: ProductListEntity[] = await res.json();
 
             setProductsList(data);
@@ -82,10 +82,6 @@ export const ViewProductsList = () => {
 
     const showError = () => {
         setIsErrorShown(true);
-        setTimeout(() => {
-            setIsErrorShown(false);
-        }, 5000)
-
     };
 
     const viewProducts = productsList.map((oneProduct, index) => <li key={oneProduct.id} className="item-line">
@@ -102,10 +98,11 @@ export const ViewProductsList = () => {
                     {oneProduct.unit}
                 </span>
             </span>
-            <span className="delete-btn">
+        <span>
                 {clicked[index]
                     ? (<>
-                            <button className="disabled" onClick={showError}><span className="text-in-btn">Usuń</span>
+                            <button className="disabled-btn" onClick={showError}><span
+                                className="text-in-btn">Usuń</span>
                             </button>
                         </>
                     )
@@ -116,7 +113,7 @@ export const ViewProductsList = () => {
     )
 
     const viewClearChecked = productsList.length !== 0
-        ? <button className="btn clear-checked" onClick={clearLocalStorage}><span className="text-in-btn">Wyczyść zaznaczenia</span>
+        ? <button className="clear-checked" onClick={clearLocalStorage}><span className="text-in-btn">Wyczyść zaznaczenia</span>
         </button>
         : null
 

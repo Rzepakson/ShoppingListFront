@@ -11,12 +11,6 @@
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
 }
 
-.add-list h1 {
-    font-size: 3.5vh;
-    margin-bottom: 1.5vh;
-    cursor: default;
-}
-
 .add-list-form {
     margin: 0 auto 2vh auto;
     width: 50vw;
@@ -27,20 +21,12 @@
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .9);
 }
 
-.add-list-name {
+.one-input-add-list {
     display: flex;
     justify-content: center;
     margin-bottom: 2vh;
 }
 
-.submit-add-list {
-    display: block;
-}
-
-.add-product-error {
-    color: red;
-}
-
-.add-list-form button {
+.add-list-btn {
     margin-bottom: 1vh;
 }

@@ -4,8 +4,8 @@ import './NotFoundView.css'
 
 export const NotFoundView = () => (
     <div className="background">
-        <p className="not-found-message">Strona o podanym adresie nie istnieje!</p>
+        <p className="section-title">Strona o podanym adresie nie istnieje!</p>
         <br/>
-        <Btn className="home" text="Powrót do strony głównej" to="/"/>
+        <Btn className="btn" text="Powrót do strony głównej" to="/"/>
     </div>
 );

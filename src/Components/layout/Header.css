@@ -4,42 +4,26 @@ header {
     padding: 10px;
 }
 
-header h1 {
-    letter-spacing: 0.3vh;
+.site-title {
+    letter-spacing: 0.2vh;
     font-size: 4vh;
     cursor: default;
+    margin-left: 8vw;
 }
 
-.home {
-    text-decoration: none;
-    font-size: 3vh;
-}
-
-.home:hover {
-    transform: scale(1.05);
-}
-
-.home:active {
-    transform: scale(0.95);
-}
-
-.my-lists-span {
+.my-lists-btn-span {
     margin-top: 1.5vh;
 }
 
-.my-lists-span:hover {
+.my-lists-btn-span:hover {
     transform: scale(1.02);
 }
 
-.my-lists-span:active {
+.my-lists-btn-span:active {
     transform: scale(0.95);
 }
 
 header .btn {
-    padding: 15px;
-}
-
-header .btn:hover {
-    transform: scale(1.5);
+    padding: 12px;
 }
 

@@ -1,9 +1,9 @@
 import React, {SyntheticEvent, useState} from "react";
 import {Btn} from "../common/Btn";
 import {Navigate} from "react-router-dom";
+import {apiUrl} from "../../config/api";
 
 import "./AddShoppingList.css"
-import {apiUrl} from "../../config/api";
 
 const initForm = {
     name: '',
@@ -21,7 +21,7 @@ export const AddShoppingList = () => {
         e.preventDefault();
 
         try {
-            const res = await fetch(`${apiUrl}/api/list`, {
+            const res = await fetch(`${apiUrl}/list`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,9 +33,9 @@ export const AddShoppingList = () => {
 
             const data = await res.json();
 
-            if (res.status >= 400) {
-                setError(data.message);
-            }
+            res.status >= 400
+                ? setError(data.message)
+                : setError(null)
 
             setId(data.id);
             setCreatedAt(data.createdAt)
@@ -58,17 +58,13 @@ export const AddShoppingList = () => {
 
     const showError = () => {
         setIsErrorShown(true);
-        setTimeout(() => {
-            setIsErrorShown(false);
-            setError(null);
-        }, 5000)
     }
 
     return (
         <div className="add-list">
-            <h1>Utwórz nową listę zakupów!</h1>
+            <h1 className="section-title">Utwórz nową listę zakupów!</h1>
             <form className="add-list-form" onSubmit={saveList} noValidate>
-                <p className="add-list-name">
+                <p className="one-input-add-list">
                     <label>
                         <span className="input-name">Nazwa: </span>
                         <input
@@ -81,9 +77,9 @@ export const AddShoppingList = () => {
                         />
                     </label>
                 </p>
-                <Btn className="submit-add-list" text="Utwórz" onClick={showError}/>
+                <Btn className="add-list-btn" text="Utwórz" onClick={showError}/>
                 {isErrorShown && (
-                    <p className="add-product-error">{error}</p>
+                    <p className="error">{error}</p>
                 )}
             </form>
         </div>

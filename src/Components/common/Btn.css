@@ -23,16 +23,44 @@ button:active, .btn:active {
     transform: scale(0.95);
 }
 
-.disabled {
+
+.disabled-btn {
     background-color: #8a8a8a;
     cursor: default;
+    margin-left: .5vh;
+    margin-top: .3vh;
 }
 
-.disabled:hover {
+.disabled-btn:hover {
     background-color: #8a8a8a;
     transform: none;
 }
 
 .text-in-btn {
     font-size: 1.5vh;
+}
+
+.home-btn {
+    text-decoration: none;
+}
+
+.home-btn:hover {
+    transform: scale(1.02);
+}
+
+.home-btn:active {
+    transform: scale(0.95);
+}
+
+.home-btn .text-in-btn {
+    font-size: 3vh;
+}
+
+.delete-product-btn {
+    margin-left: .5vh;
+    margin-top: .3vh;
+}
+
+.delete-list-btn {
+    margin-top: -.5vh;
 }
