@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52defc48-cea4-4db2-8939-b171eda07eb4" name="Changes" comment="Added possibility of registration and login">
+    <list default="true" id="52defc48-cea4-4db2-8939-b171eda07eb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AddShoppingList/AddShoppingList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NotFoundView/NotFoundView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NotFoundView/NotFoundView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NotFoundView/NotFoundView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NotFoundView/NotFoundView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewLists/ViewLists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ViewProductsList/ViewProductsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Btn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/layout/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +26,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Programowanie/MegaK/ShoppingList/shopping-list-back&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Programowanie\\MegaK\\ShoppingList\\shopping-list-front\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Programowanie/MegaK/ShoppingList/shopping-list-front",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Programowanie\\MegaK\\ShoppingList\\shopping-list-front\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Programowanie\MegaK\ShoppingList\shopping-list-front\public\pictures" />
@@ -130,7 +118,8 @@
       <workItem from="1680190886835" duration="1718000" />
       <workItem from="1680196759420" duration="5726000" />
       <workItem from="1680254484027" duration="14626000" />
-      <workItem from="1680282977747" duration="25660000" />
+      <workItem from="1680282977747" duration="28007000" />
+      <workItem from="1680353208608" duration="1977000" />
     </task>
     <task id="LOCAL-00002" summary="Added main components and basic CSS to them. Added util formatDate which transform date to DD-MM-YYYY format. Added connection to back-end types. Bump version.">
       <created>1679254737148</created>
@@ -181,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680039207665</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added possibility of registration and login, added one context, some changes in style. Bump version.">
+      <created>1680309031073</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680309031073</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +192,8 @@
     <MESSAGE value="Added styles to application, added not-found-view which handle unexpected endpoints. Added showing errors. Bump version. THIS IS FIRST VERSION OF APP, CODE NOT REFACTORED!" />
     <MESSAGE value="Little adjustments of endpoints." />
     <MESSAGE value="Small refactoring of CSS rules and added api config file. Bump version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Small refactoring of CSS rules and added api config file. Bump version." />
+    <MESSAGE value="Added possibility of registration and login, added one context, some changes in style. Bump version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added possibility of registration and login, added one context, some changes in style. Bump version." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
