@@ -50,7 +50,7 @@ This demo is in mobile resolution (small):
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Things to do:
+## 💪Things to do:
 - double password typing/checking at registration
 - password preview at login
 - changing password
