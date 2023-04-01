@@ -1,0 +1,32 @@
+.background-login-register, .background-not-found-view, .background-loading {
+    margin-top: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-btn, .registration-btn {
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+.info-login-register {
+    margin-top: 1vh;
+}
+
+.redirect-login-register {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.redirect-login-register:hover, .lists:hover {
+    transform: scale(1.05);
+}
+
+.redirect-login-register:active .lists:hover {
+    transform: scale(0.95);
+}

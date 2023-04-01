@@ -1,7 +1,9 @@
-import React, {SyntheticEvent, useState} from "react";
+import React, {SyntheticEvent, useContext, useState} from "react";
 import {Btn} from "../common/Btn";
 import {Navigate} from "react-router-dom";
 import {apiUrl} from "../../config/api";
+import {Header} from "../layout/Header";
+import {UserIdContext} from "../../contexts/userId.context";
 
 import "./AddShoppingList.css"
 
@@ -15,13 +17,15 @@ export const AddShoppingList = () => {
     const [error, setError] = useState<string | null>(null);
     const [isErrorShown, setIsErrorShown] = useState(false);
     const [form, setForm] = useState(initForm);
+    const {userId} = useContext(UserIdContext);
 
 
     const saveList = async (e: SyntheticEvent) => {
         e.preventDefault();
 
+
         try {
-            const res = await fetch(`${apiUrl}/list`, {
+            const res = await fetch(`${apiUrl}/list/${userId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,27 +65,30 @@ export const AddShoppingList = () => {
     }
 
     return (
-        <div className="add-list">
-            <h1 className="section-title">Utwórz nową listę zakupów!</h1>
-            <form className="add-list-form" onSubmit={saveList} noValidate>
-                <p className="one-input-add-list">
-                    <label>
-                        <span className="input-name">Nazwa: </span>
-                        <input
-                            type="text"
-                            name="list-name"
-                            required
-                            maxLength={20}
-                            value={form.name}
-                            onChange={e => updateForm('name', e.target.value)}
-                        />
-                    </label>
-                </p>
-                <Btn className="add-list-btn" text="Utwórz" onClick={showError}/>
-                {isErrorShown && (
-                    <p className="error">{error}</p>
-                )}
-            </form>
-        </div>
+        <>
+            <Header/>
+            <div className="add-list">
+                <h1 className="section-title">Utwórz nową listę zakupów!</h1>
+                <form className="add-list-form" onSubmit={saveList} noValidate>
+                    <p className="one-input-add-list">
+                        <label>
+                            <span className="input-name">Nazwa: </span>
+                            <input
+                                type="text"
+                                name="list-name"
+                                required
+                                maxLength={20}
+                                value={form.name}
+                                onChange={e => updateForm('name', e.target.value)}
+                            />
+                        </label>
+                    </p>
+                    <Btn className="add-list-btn" text="Utwórz" onClick={showError}/>
+                    {isErrorShown && (
+                        <p className="error">{error}</p>
+                    )}
+                </form>
+            </div>
+        </>
     );
 };
