@@ -42,6 +42,8 @@ button:active, .btn:active {
 
 .home-btn {
     text-decoration: none;
+    padding-top: 3vh;
+    padding-left: 2vw;
 }
 
 .home-btn:hover {

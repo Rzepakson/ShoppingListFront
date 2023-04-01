@@ -1,4 +1,3 @@
-.background .btn {
+.background-not-found-view .btn, .create-new-list {
     display: inline-block;
-    margin-bottom: 2vh;
 }

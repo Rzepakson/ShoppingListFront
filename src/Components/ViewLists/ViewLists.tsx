@@ -5,24 +5,26 @@ import {DeleteListBtn} from "../common/DeleteListBtn";
 import {DeleteListContext} from "../../contexts/deleteList.context";
 import {apiUrl} from "../../config/api";
 import {Btn} from "../common/Btn";
+import {Header} from "../layout/Header";
+import {UserIdContext} from "../../contexts/userId.context";
 
 import './ViewLists.css';
 
 export const ViewLists = () => {
     const [list, setList] = useState<ListEntity[] | null>(null);
     const {deleteList} = useContext(DeleteListContext);
+    const {userId} = useContext(UserIdContext);
 
     useEffect(() => {
-
         (async () => {
-            const res = await fetch(`${apiUrl}/list`);
+            const res = await fetch(`${apiUrl}/list/${userId}`);
             const data: ListEntity[] = await res.json();
             setList(data);
         })();
-    }, [deleteList]);
+    }, [deleteList, userId]);
 
     if (list === null) {
-        return <h2>Trwa wczytywanie list...</h2>;
+        return <h2 className="background background-loading">Trwa wczytywanie list...</h2>;
     }
 
     const viewLists = list.map(oneList =>
@@ -35,18 +37,21 @@ export const ViewLists = () => {
     const whatToView = list.length === 0
         ? <>
             <h2 className="section-title">Brak list do wyświetlenia!</h2>
-            <Btn className="btn" text="Utwórz nową!" to="/"/>
+            <Btn className="btn create-new-list" text="Utwórz nową!" to="/"/>
         </>
         :
         <>
             <h1 className="section-title">Listy zakupowe</h1>
             <ul className="one-list">{viewLists}</ul>
+            <Btn className="btn create-new-list" text="Utwórz nową!" to="/"/>
         </>
 
-
     return (
-        <div className="background">
-            <span>{whatToView}</span>
-        </div>
+        <>
+            <Header/>
+            <div className="background">
+                <span>{whatToView}</span>
+            </div>
+        </>
     )
 }
