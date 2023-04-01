@@ -1,5 +1,5 @@
 
-# Zakupsy - create shop lists
+# Zakupsy - create shop lists [frontend]
 
 
 ## 📝Description of the project 
