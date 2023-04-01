@@ -49,3 +49,11 @@ This demo is in mobile resolution (small):
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Things to do:
+- double password typing/checking at registration
+- password preview at login
+- changing password
+- reminding password/login
+- typing email at registration
+- fix new bugs
