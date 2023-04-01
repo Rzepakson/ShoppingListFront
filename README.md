@@ -56,4 +56,5 @@ This demo is in mobile resolution (small):
 - changing password
 - reminding password/login
 - typing email at registration
+- possibility of deleting an account
 - fix new bugs
